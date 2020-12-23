@@ -67,15 +67,16 @@
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
-                    <!-- <label for="organization" class="labelMarginRight">Organization Name</label><br> -->
-                      <mat-form-field>
-                        <mat-label>Organization Name</mat-label>
-                        <mat-select [(ngModel)]="projectObj.clientId" name="clientId">
-                          <mat-option *ngFor="let clnt of lstClients" [value]="clnt.clientId">
-                            {{clnt.name}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
+                    <label for="organization Name" class="labelMarginRight">Organization Name</label><br>
+                    <p-dropdown [options]="lstOrganizations" [(ngModel)]="projectObj.organizationId" optionLabel="organizationName" optionValue="id"></p-dropdown>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Employee Name" class="labelMarginRight">Employee Name</label><br>
+                    <p-dropdown [options]="lstEmployees" [(ngModel)]="projectObj.employeeId" optionLabel="employeeName" optionValue="id"></p-dropdown>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Client Name" class="labelMarginRight">Client Name</label><br>
+                    <p-dropdown [options]="lstClients" [(ngModel)]="projectObj.clientId" optionLabel="clientName" optionValue="id"></p-dropdown>
                 </div>
             </div>
         </p-tabPanel>

@@ -10,7 +10,11 @@ export class project {
      planndedEndDate:Date   
      actualEndDate:Date     
      description:string       
-     organizationId:number                       
-     employeeId:number                                           
-     clientId:number          
+     organizationId:number    
+     organizationName:string                                          
+     employeeId:number
+     employeeName:string                                           
+     clientId:number    
+     clientName:string
+     clientMobile:string      
   }

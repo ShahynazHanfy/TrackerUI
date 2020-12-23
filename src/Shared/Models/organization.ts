@@ -1,10 +1,10 @@
 export class organization {
-      Id :number
-      OrganizationName: string
-      OrganizationCode :string
-      Mobile :string
-      Phone :string
-      Address:string
-      ResponsiblePerson:string
-      Location :string
+      id :number
+      organizationName: string
+      organizationCode :string
+      mobile :string
+      phone :string
+      address:string
+      responsiblePerson:string
+      location :string
 }
