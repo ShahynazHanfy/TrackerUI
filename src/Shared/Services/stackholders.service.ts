@@ -18,7 +18,13 @@ GetAllStackholders(): Observable <stackholder[]>{
   return this.httpClient.get<stackholder[]> (`${environment.stackeholders}`,this.httpHeader) ;
 }
 GetAllStackholdersByProjectID(ProjectID:Number): Observable <stackholder[]>{
-  return this.httpClient.get<stackholder[]> (`${environment.stackeholders}${ProjectID}`,this.httpHeader) ;
+  return this.httpClient.get<stackholder[]> (`${environment.GetStackholdersByProjectID}${ProjectID}`,this.httpHeader) ;
 }
+
+insertListOfStackholders(stackholders:stackholder[]): Observable <any >{
+
+  return this.httpClient.post<any> (`${environment.stackeholders}`,stackholders,this.httpHeader) ;
+}
+
 
 }
