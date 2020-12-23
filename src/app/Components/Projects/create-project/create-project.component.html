@@ -14,22 +14,22 @@
                 <div class="p-field col-md-3">
                     <label for="Project Name" class="labelMarginRight">Project Name</label><br>
                     <!--  [(ngModel)]="product.name" -->
-                    <input type="text" pInputText id="name" required autofocus />
+                    <input type="text" [(ngModel)]="projectObj.projectName" pInputText id="name" required autofocus />
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
-                    <label for="Project Code" class="labelMarginRight">Project Code</label><br>
-                    <input type="text" pInputText id="Code" required autofocus />
+                    <label for="Project Code"  class="labelMarginRight">Project Code</label><br>
+                    <input type="text" [(ngModel)]="projectObj.projectCode" pInputText id="Code" required autofocus />
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Type" class="labelMarginRight">Project Type</label><br>
-                    <input type="text" pInputText id="Type" required autofocus />
+                    <input type="text" [(ngModel)]="projectObj.projectTypeName" pInputText id="Type" required autofocus />
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
-                    <label for="Project Cost" class="labelMarginRight">Project Cost</label><br>
-                    <input type="number" pInputText id="Cost" required autofocus />
+                    <label for="Project Cost"  class="labelMarginRight">Project Cost</label><br>
+                    <input type="number" [(ngModel)]="projectObj.cost" pInputText id="Cost" required autofocus />
                     <small class="p-invalid"></small>
                 </div>
                 <!-- <div class="p-field">
@@ -41,43 +41,46 @@
 
                 <div class="p-field col-md-3">
                     <label for="Project Period" class="labelMarginRight">Project Period</label><br>
-                    <input type="number" pInputText id="Period" required autofocus />
+                    <input type="number" [(ngModel)]="projectObj.projectPeriod" pInputText id="Period" required autofocus />
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Plannded Start Date" class="labelMarginRight">Plannded Start Date</label><br>
-                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <p-calendar [(ngModel)]="projectObj.planndedStartDate"  dateFormat="dd.mm.yy"></p-calendar>
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Actual Start Date" class="labelMarginRight">Actual Start Date</label><br>
-                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <p-calendar [(ngModel)]="projectObj.actualStartDate"  dateFormat="dd.mm.yy"></p-calendar>
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Plannded End Date" class="labelMarginRight">Plannded End Date</label><br>
-                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <p-calendar [(ngModel)]="projectObj.planndedEndDate" dateFormat="dd.mm.yy"></p-calendar>
                     <small class="p-invalid"></small>
                 </div>
             </div> <br>
             <div class="row">
                 <div class="p-field col-md-3">
                     <label for="Actual End Date" class="labelMarginRight">Actual End Date</label><br>
-                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <p-calendar [(ngModel)]="projectObj.actualEndDate" dateFormat="dd.mm.yy"></p-calendar>
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="organization Name" class="labelMarginRight">Organization Name</label><br>
-                    <p-dropdown [options]="lstOrganizations" [(ngModel)]="projectObj.organizationId" optionLabel="organizationName" optionValue="id"></p-dropdown>
+                    <p-dropdown [options]="lstOrganizations" [(ngModel)]="projectObj.organizationId" placeholder="Select Organization Name" optionLabel="organizationName" optionValue="id"></p-dropdown>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Employee Name" class="labelMarginRight">Employee Name</label><br>
-                    <p-dropdown [options]="lstEmployees" [(ngModel)]="projectObj.employeeId" optionLabel="employeeName" optionValue="id"></p-dropdown>
+                    <p-dropdown  [options]="lstEmployees" [(ngModel)]="projectObj.employeeId" placeholder="Select Employee Name" optionLabel="name" optionValue="id"></p-dropdown>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Client Name" class="labelMarginRight">Client Name</label><br>
-                    <p-dropdown [options]="lstClients" [(ngModel)]="projectObj.clientId" optionLabel="clientName" optionValue="id"></p-dropdown>
+                    <p-dropdown [options]="lstClients" [(ngModel)]="projectObj.clientId" placeholder="Select Client Name" optionLabel="clientName" optionValue="id"></p-dropdown>
                 </div>
+            </div><br>
+            <div class="row" style="float: right;margin-right: 50px;margin-bottom: 20px;">
+                <button pButton type="button" (click)="AddProject()" icon="pi pi-check" label="Submit" class="p-button-raised "></button>
             </div>
         </p-tabPanel>
 

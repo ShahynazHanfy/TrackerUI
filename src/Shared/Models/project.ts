@@ -2,7 +2,7 @@ export class project {
      id:number;
      projectName:string       
      projectCode:string       
-     type:string              
+     projectTypeName:string              
      cost:number              
      projectPeriod :number    
      planndedStartDate:Date 

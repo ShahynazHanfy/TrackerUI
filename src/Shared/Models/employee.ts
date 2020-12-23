@@ -1,6 +1,6 @@
 export class employee {
     id: number
-    name: string
+    employeeName: string
     code: string
     departmentName: string
     departmentId: number
