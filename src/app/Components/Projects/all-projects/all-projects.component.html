@@ -38,9 +38,6 @@
                                     field="endtDate"></p-sortIcon>
                             </th>
                             <th>Operations</th>
-
-
-
                         </tr>
                         <tr>
                             <!-- <th>
@@ -170,12 +167,77 @@
                 <i class="pi pi-user-minus"></i>
                 <span style="margin-left: 10px;">Stackholders</span>
             </ng-template>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
+            
+            
+
+            <p-table #dt [value]="stackholders" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+            [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers" [paginator]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0"
+            [globalFilterFields]="['name','country.name','representative.name','status']">
+            <ng-template pTemplate="caption">
+                <div class="table-header row">
+                    <!-- <div class="col">
+                        <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()"
+                            class="p-button-warning p-mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+                        <p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Add New Pharmacy" style="margin-left: 30px;"></p-button>
+        
+                    </div> -->
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Project Name</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Pharmacy Type</th>
+                </tr>
+                <tr>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-stackholder>
+                <tr>
+                    <td class="nameStyle">
+                        <!-- {{pharmacy.name}} -->
+                    </td>
+                    <td>
+                        <!-- {{pharmacy.telephone}} -->
+                    </td>
+                    <td>
+                        <!-- {{pharmacy.email}} -->
+                    </td>
+                    <!-- <td>
+                        <table *ngFor="let i of pharmacy.users">
+                            <tr>
+                                <td style="overflow: hidden;">
+                                    {{i.userName}}
+                                    <hr>
+                                </td>
+                            </tr>
+                        </table>
+                    </td> -->
+                    <!-- <td>
+                        <table *ngFor="let i of pharmacy.users">
+                            <tr>
+                                <td>
+                                    {{i.role}}
+                                    <hr>
+                                </td>
+                            </tr>
+                        </table>
+                    </td> -->
+                    <!-- <td style="font-weight: bold;">{{pharmacy.pharmacyType}}</td> -->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="6">No Pharmacies found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+
         </p-tabPanel>
         <p-tabPanel header="Header II">
             <ng-template pTemplate="header">
