@@ -13,7 +13,7 @@ export class ClientService {
     'content-type':'application/json',
     'Accept': '*/*'  
   })};
-  GetAllClientss(): Observable <clients[]>{
-    return this.httpClient.get<clients[]> (`${environment.clients}`,this.httpHeader) ;
-  }
+  // GetAllClientss(): Observable <clients[]>{
+  //   return this.httpClient.get<clients[]> (`${environment.clients}`,this.httpHeader) ;
+  // }
 }

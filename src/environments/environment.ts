@@ -5,6 +5,7 @@
 export const environment = {
   project: 'http://localhost:50653/api/project',
   stackeholders: 'http://localhost:50653/api/Stackeholders',
+  GetStackholdersByProjectID:'http://localhost:50653/api/Stackeholders/GetStackeholdersByProjectId/',
   organizations: 'http://localhost:50653/api/Stackeholders',
   clients: 'http://localhost:50653/api/Stackeholders',
 
