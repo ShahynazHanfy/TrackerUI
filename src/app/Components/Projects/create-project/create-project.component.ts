@@ -47,7 +47,7 @@ ProjectTypeObj:projectType;
       err=>console.log(err)
     )
     this.projectTypeService.GetAllProjectTypes().subscribe(
-      res=>{this.lstProjectTypes=res},
+      data=>{this.lstProjectTypes=data},
       err=>console.log(err)
     )
   }
