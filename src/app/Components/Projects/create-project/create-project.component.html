@@ -10,8 +10,87 @@
                 <i class="pi pi-fw pi-home"></i>
                 <span style="margin-left: 10px;">Project</span>
             </ng-template>
-<div></div>
+            <div class="row">
+                <div class="p-field col-md-3">
+                    <label for="Project Name" class="labelMarginRight">Project Name</label><br>
+                    <!--  [(ngModel)]="product.name" -->
+                    <input type="text" pInputText id="name" required autofocus />
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Project Code" class="labelMarginRight">Project Code</label><br>
+                    <input type="text" pInputText id="Code" required autofocus />
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Project Type" class="labelMarginRight">Project Type</label><br>
+                    <input type="text" pInputText id="Type" required autofocus />
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Project Cost" class="labelMarginRight">Project Cost</label><br>
+                    <input type="number" pInputText id="Cost" required autofocus />
+                    <small class="p-invalid"></small>
+                </div>
+                <!-- <div class="p-field">
+                <label for="description">Description</label>
+                <textarea id="description" pInputTextarea  required rows="3" cols="20"></textarea>
+            </div>       -->
+            </div><br>
+            <div class="row">
+
+                <div class="p-field col-md-3">
+                    <label for="Project Period" class="labelMarginRight">Project Period</label><br>
+                    <input type="number" pInputText id="Period" required autofocus />
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Plannded Start Date" class="labelMarginRight">Plannded Start Date</label><br>
+                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Actual Start Date" class="labelMarginRight">Actual Start Date</label><br>
+                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <label for="Plannded End Date" class="labelMarginRight">Plannded End Date</label><br>
+                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <small class="p-invalid"></small>
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="p-field col-md-3">
+                    <label for="Actual End Date" class="labelMarginRight">Actual End Date</label><br>
+                    <p-calendar  dateFormat="dd.mm.yy"></p-calendar>
+                    <small class="p-invalid"></small>
+                </div>
+                <div class="p-field col-md-3">
+                    <!-- <label for="organization" class="labelMarginRight">Organization Name</label><br> -->
+                      <mat-form-field>
+                        <mat-label>Organization Name</mat-label>
+                        <mat-select [(ngModel)]="projectObj.clientId" name="clientId">
+                          <mat-option *ngFor="let clnt of lstClients" [value]="clnt.clientId">
+                            {{clnt.name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
         </p-tabPanel>
+
+
+
+
+
+
+
+
+
+
+
+
         <p-tabPanel>
             <ng-template pTemplate="header">
                 <i class="pi pi-user-minus"></i>
