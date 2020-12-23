@@ -24,7 +24,7 @@
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Type" class="labelMarginRight">Project Type Name</label><br>
-                    <p-dropdown [options]="lstClients" [(ngModel)]="projectObj.projectTypeId" placeholder="Select Project Type Name" optionLabel="typeName" optionValue="id"></p-dropdown>
+                    <p-dropdown [options]="lstProjectTypes" [(ngModel)]="projectObj.projectTypeId" placeholder="Select Project Type Name" optionLabel="projectTypeName" optionValue="id"></p-dropdown>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Cost"  class="labelMarginRight">Project Cost</label><br>

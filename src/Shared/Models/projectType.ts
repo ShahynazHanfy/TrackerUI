@@ -1,4 +1,4 @@
 export class projectType {
     id:number
-    typeName:string
+    projectTypeName:string
 }

@@ -10,6 +10,7 @@ import { EmployeeService } from 'src/Shared/Services/employee.service';
 import { MessageService } from 'primeng/api';
 import { ProjectService } from 'src/Shared/Services/project.service';
 import { Router } from '@angular/router';
+import { ProjectTypeService } from 'src/Shared/Services/project-type.service';
 
 @Component({
   selector: 'app-create-project',
@@ -26,13 +27,13 @@ EmployeeObj:employee;
 lstProjectTypes:projectType[];
 ProjectTypeObj:projectType;
   constructor(private projectService:ProjectService, private organizationService:OrganizationService,
-    private clientService:ClientService,private employeeService:EmployeeService
-    ,private messageService: MessageService,private router: Router) {
-      this.projectObj={id:0,projectName:"",projectCode:"",projectTypeName:"",projectTypeId:0,cost:0,projectPeriod:0,planndedStartDate:new Date()
-      ,actualStartDate:new Date(),planndedEndDate:new Date(),actualEndDate:new Date(),description:"",organizationId:0 ,employeeId:0,clientId:0}
-     }
+    private clientService:ClientService,private employeeService:EmployeeService,private projectTypeService :ProjectTypeService
+    ,private messageService: MessageService,private router: Router) {}
 
   ngOnInit(): void {
+    this.projectObj={id:0,projectName:"",projectCode:"",projectTypeName:"",projectTypeId:0,cost:0,projectPeriod:0,planndedStartDate:new Date()
+    ,actualStartDate:new Date(),planndedEndDate:new Date(),actualEndDate:new Date(),description:"",organizationId:0 ,employeeId:0,clientId:0}
+
     this.organizationService.GetAllOrganizations().subscribe(
       res=>{this.lstOrganizations=res},
       err=>console.log(err)
@@ -45,8 +46,10 @@ ProjectTypeObj:projectType;
       res=>{this.lstEmployees=res},
       err=>console.log(err)
     )
-
-
+    this.projectTypeService.GetAllProjectTypes().subscribe(
+      res=>{this.lstProjectTypes=res},
+      err=>console.log(err)
+    )
   }
   AddProject() {
     // this.projectObj.organizationId = Number(this.projectObj.organizationId);
