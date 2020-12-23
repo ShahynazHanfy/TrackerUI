@@ -1,9 +1,11 @@
 <!-- <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu> -->
 
 <div class="card">
+    <p-button icon="pi pi-external-link" label="Add Project"  routerLink="createProject" style="margin-left: 80%;margin-top: 20px;"></p-button>
 
     <!-- Basic Data -->
     <p-tabView styleClass="tabview-custom">
+        
         <p-tabPanel>
             <ng-template pTemplate="header">
                 <i class="pi pi-fw pi-home"></i>
@@ -210,4 +212,5 @@
                 Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
         </p-tabPanel>
     </p-tabView>
+    
 </div>
