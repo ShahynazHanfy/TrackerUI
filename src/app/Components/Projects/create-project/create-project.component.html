@@ -23,9 +23,8 @@
                     <small class="p-invalid"></small>
                 </div>
                 <div class="p-field col-md-3">
-                    <label for="Project Type" class="labelMarginRight">Project Type</label><br>
-                    <input type="text" [(ngModel)]="projectObj.projectTypeName" pInputText id="Type" required autofocus />
-                    <small class="p-invalid"></small>
+                    <label for="Project Type" class="labelMarginRight">Project Type Name</label><br>
+                    <p-dropdown [options]="lstClients" [(ngModel)]="projectObj.projectTypeId" placeholder="Select Project Type Name" optionLabel="typeName" optionValue="id"></p-dropdown>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Cost"  class="labelMarginRight">Project Cost</label><br>

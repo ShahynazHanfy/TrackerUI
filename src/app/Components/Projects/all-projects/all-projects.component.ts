@@ -27,8 +27,8 @@ export class AllProjectsComponent implements OnInit {
       console.log(this.projects)
     })
     this.project1 = {
-      actualEndDate: new Date(), id: 0, organizationId: 0, projectPeriod: 0, type: '',clientMobil:'',clientName:'',organizationName:'',projectTypeName:'',
-      planndedEndDate: new Date(), planndedStartDate: new Date(), projectCode: '',listOfStackholders:[],
+      actualEndDate: new Date(), id: 0, organizationId: 0, projectPeriod: 0,clientMobil:'',clientName:'',organizationName:'',projectTypeName:'',
+      planndedEndDate: new Date(), planndedStartDate: new Date(), projectCode: '',listOfStackholders:[],projectTypeId:0,
       projectName: '', actualStartDate: new Date(), clientId: 0, cost: 0, description: '', employeeId: 0
     }
   }

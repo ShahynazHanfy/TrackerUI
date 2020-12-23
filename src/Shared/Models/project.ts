@@ -2,14 +2,14 @@ import {stackholder} from '../Models/stackeholder'
 export class project {
      id:number;
      projectName:string       
-     projectCode:string       
+     projectCode:string  
+     projectTypeId:number              
      projectTypeName:string              
      cost:number              
      projectPeriod :number
      clientName:string
      clientMobil:string
      organizationName:string
-     projectTypeName:string    
      planndedStartDate:Date 
      actualStartDate:Date   
      planndedEndDate:Date   

@@ -3,6 +3,7 @@ import { observable } from 'rxjs';
 import { employee } from 'src/Shared/Models/employee';
 import { client } from 'src/Shared/Models/client';
 import { organization } from 'src/Shared/Models/organization';
+import { projectType } from 'src/Shared/Models/projectType';
 import { OrganizationService } from 'src/Shared/Services/organization.service';
 import { ClientService } from 'src/Shared/Services/client.service';
 import { EmployeeService } from 'src/Shared/Services/employee.service';
@@ -22,11 +23,12 @@ lstOrganizations:organization[];
 OrganizationObj:organization;
 lstEmployees:employee[];
 EmployeeObj:employee;
-
+lstProjectTypes:projectType[];
+ProjectTypeObj:projectType;
   constructor(private projectService:ProjectService, private organizationService:OrganizationService,
     private clientService:ClientService,private employeeService:EmployeeService
     ,private messageService: MessageService,private router: Router) {
-      this.projectObj={id:0,projectName:"",projectCode:"",projectTypeName:"",cost:0,projectPeriod:0,planndedStartDate:new Date()
+      this.projectObj={id:0,projectName:"",projectCode:"",projectTypeName:"",projectTypeId:0,cost:0,projectPeriod:0,planndedStartDate:new Date()
       ,actualStartDate:new Date(),planndedEndDate:new Date(),actualEndDate:new Date(),description:"",organizationId:0 ,employeeId:0,clientId:0}
      }
 
