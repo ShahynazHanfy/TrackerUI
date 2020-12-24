@@ -61,7 +61,7 @@ export class CreateProjectComponent implements OnInit {
     // console.log("organizationId",this.projectObj.organizationId);
     this.projectService.AddProject(this.projectObj).subscribe(
 
-      (res) => {
+      (res) => {console.log("Project id",res)
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Record Added' });
         this.router.navigate(['home/tabs']);
       },

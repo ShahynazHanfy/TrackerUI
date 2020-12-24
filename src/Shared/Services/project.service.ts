@@ -21,7 +21,7 @@ export class ProjectService {
   GetAllProjects(): Observable<project[]> {
     return this.httpClient.get<project[]>(`${environment.project}`, this.httpHeader);
   }
-  AddProject(project): Observable<project[]> {
-    return this.httpClient.post<project[]>(`${environment.project}`,project, this.httpHeader);
+  AddProject(project): Observable<project> {
+    return this.httpClient.post<project>(`${environment.project}`,project, this.httpHeader);
   }
 }
