@@ -8,6 +8,7 @@ export const environment = {
   organizations: 'http://localhost:50653/api/Organizations',
   clients: 'http://localhost:50653/api/Clients',
   employees: 'http://localhost:50653/api/Employees',
+  projectTypes:'http://localhost:50653/api/ProjectTypes',
 
 
   

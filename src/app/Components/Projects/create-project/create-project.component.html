@@ -1,7 +1,9 @@
 <!-- <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu> -->
-
+<p-toast></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
 <div class="card">
-
     <!-- Basic Data -->
     <p-tabView styleClass="tabview-custom">
 
@@ -14,24 +16,29 @@
                 <div class="p-field col-md-3">
                     <label for="Project Name" class="labelMarginRight">Project Name</label><br>
                     <!--  [(ngModel)]="product.name" -->
-                    <input type="text" [(ngModel)]="projectObj.projectName" pInputText id="name" required autofocus />
-                    <small class="p-invalid"></small>
+                    <input #Name="ngModel" [class.is-invalid]="Name.invalid && Name.touched"
+                        [class.is-valid]="Name.valid" required minlength="3" type="text"
+                        [(ngModel)]="projectObj.projectName" pInputText id="name" required autofocus />
+                    <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Code" class="labelMarginRight">Project Code</label><br>
                     <input type="text" [(ngModel)]="projectObj.projectCode" pInputText id="Code" required autofocus />
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Type" class="labelMarginRight">Project Type Name</label><br>
                     <p-dropdown [options]="lstProjectTypes" [(ngModel)]="projectObj.projectTypeId"
-                        placeholder="Select Project Type Name" optionLabel="projectTypeName" optionValue="id">
+                        placeholder="Select Project Type Name" optionLabel="typeName" optionValue="id">
                     </p-dropdown>
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Project Cost" class="labelMarginRight">Project Cost</label><br>
                     <input type="number" [(ngModel)]="projectObj.cost" pInputText id="Cost" required autofocus />
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
                 <!-- <div class="p-field">
                 <label for="description">Description</label>
@@ -44,7 +51,8 @@
                     <label for="Project Period" class="labelMarginRight">Project Period</label><br>
                     <input type="number" [(ngModel)]="projectObj.projectPeriod" pInputText id="Period" required
                         autofocus />
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Plannded Start Date" class="labelMarginRight">Plannded Start Date</label><br>
@@ -54,19 +62,22 @@
                 <div class="p-field col-md-3">
                     <label for="Actual Start Date" class="labelMarginRight">Actual Start Date</label><br>
                     <p-calendar [(ngModel)]="projectObj.actualStartDate" dateFormat="dd.mm.yy"></p-calendar>
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
                 <div class="p-field col-md-3">
                     <label for="Plannded End Date" class="labelMarginRight">Plannded End Date</label><br>
                     <p-calendar [(ngModel)]="projectObj.planndedEndDate" dateFormat="dd.mm.yy"></p-calendar>
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
             </div> <br>
             <div class="row">
                 <div class="p-field col-md-3">
                     <label for="Actual End Date" class="labelMarginRight">Actual End Date</label><br>
                     <p-calendar [(ngModel)]="projectObj.actualEndDate" dateFormat="dd.mm.yy"></p-calendar>
-                    <small class="p-invalid"></small>
+                    <!-- <br> <small [hidden]="Name.valid || Name.untouched" id="helpId" class="text-muted">Must more than 3
+                        letters</small> -->
                 </div>
                 <div class="p-field col-md-3">
                     <label for="organization Name" class="labelMarginRight">Organization Name</label><br>
@@ -91,10 +102,9 @@
                     <textarea id="description" [(ngModel)]="projectObj.description" pInputTextarea required rows="3"
                         cols="63"></textarea>
                 </div>
-            </div><br>
-            <div class="row" style="float: right;margin-right: 50px;margin-bottom: 20px;">
-                <button pButton type="button" (click)="AddProject()" icon="pi pi-check" label="Submit"
-                    class="p-button-raised "></button>
+                <div class="col-md-2" style="margin-top: 7%;margin-left: 28%;"> <button pButton type="button"
+                        (click)="AddProject()" icon="pi pi-check" label="Submit" class="p-button-raised "></button>
+                </div>
             </div>
         </p-tabPanel>
 
